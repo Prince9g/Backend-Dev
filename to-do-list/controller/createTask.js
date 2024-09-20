@@ -16,6 +16,12 @@ exports.addTask = async (req, res) => {
     }
 };
 
+exports.getAllTasks = async (req,res) =>{
+    const tasks = await Task.find();
+    res.json(tasks);
+    console.log(tasks);
+}
+
 
 exports.deleteTask = async (req, res) => {
     const title = req.params.title;
